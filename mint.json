@@ -1,10 +1,10 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Mintlify",
+  "name": "GoPasswordless",
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg",
-    "href": "https://mintlify.com"
+    "href": "https://gopasswordless.dev"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -23,13 +23,13 @@
   },
   "topbarLinks": [
     {
-      "name": "Community",
-      "url": "https://mintlify.com/community"
+      "name": "Explore GoPasswordless",
+      "url": "https://gopasswordless.dev"
     }
   ],
   "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "https://mintlify.com/start"
+    "name": "Start Free >",
+    "url": "https://gopasswordless.dev/auth/signup"
   },
   "feedback": {
     "thumbsRating": true,
@@ -37,23 +37,14 @@
   },
   "tabs": [
     {
-      "name": "Components",
-      "url": "content"
-    },
-    {
-      "name": "Integrations",
-      "url": "integrations"
+      "name": "SDK Reference",
+      "url": "sdk"
     }
   ],
   "navigation": [
     {
-      "group": "Getting Started",
-      "pages": [
-        "quickstart",
-        "development",
-        "settings/global",
-        "settings/navigation"
-      ]
+      "group": "Introduction",
+      "pages": ["Welcome", "Quickstart", "Examples"]
     },
     {
       "group": "Writing Content",
@@ -132,10 +123,7 @@
     },
     {
       "group": "Custom Scripts",
-      "pages": [
-        "integrations/custom/css",
-        "integrations/custom/js"
-      ]
+      "pages": ["integrations/custom/css", "integrations/custom/js"]
     },
     {
       "group": "Components",
