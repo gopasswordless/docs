@@ -45,6 +45,10 @@
     {
       "group": "Introduction",
       "pages": ["welcome", "quickstart", "examples"]
+    },
+    {
+      "group": "SDK",
+      "pages": ["signup", "signin", "validation"]
     }
   ],
   "footerSocials": {
