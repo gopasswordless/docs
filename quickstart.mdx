@@ -1,13 +1,50 @@
 ---
-title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+title: "Quickstart"
+description: "Get up and running with our React components. Just signup and follow the guide below!"
 ---
 
 ![Hero Image](https://mintlify-assets.b-cdn.net/illustration-optimized.svg)
 
-## Getting Started with Mintlify Docs
+## Install the SDK
 
-Welcome to the Mintlify documentation guide. Follow the instructions below to learn how to deploy, update and supercharge your documentation with Mintlify.
+```bash
+npm i @gopasswordless/sdk
+```
+
+## Initialise the SDK
+
+```typescript
+import { GoPasswordlessContextProvider, GoPasswordlessWidgetComponent } from "@gopasswordless/sdk";
+
+const App = () => {
+  return (
+    <GoPasswordlessContextProvider
+      settings={{
+        appId: "YOUR_APP_ID",
+        appName: "YOUR_APP_NAME",
+        appLogo: "YOUR_APP_LOGO",
+        primaryColour: "YOUR_APP_PRIMARY_COLOUR",
+        theme: "light"
+      }}
+    >
+      <GoPasswordlessWidgetComponent />
+    <GoPasswordlessContextProvider />
+  );
+};
+```
+
+The above code initialises the SDK inside a React app and displays the `GoPasswordlessWidgetComponent`, which will handle the entire lifecycle
+of signing users up and loging them in.
+
+You can use the hooks provided to access the user's authentication token:
+
+```typescript
+import { useGoPasswordlessContext } from '@gopasswordless/sdk';
+
+...
+
+const { token } = useGoPasswordlessContext();
+```
 
 ### 1. Deploying Your Docs Repository
 
