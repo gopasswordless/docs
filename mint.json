@@ -9,8 +9,8 @@
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#2CA9BC",
-    "light": "#55D799",
-    "dark": "#0D9373",
+    "light": "#2CA9BC",
+    "dark": "#2CA9BC",
     "anchors": {
       "from": "#117866",
       "to": "#2AB673"
@@ -28,7 +28,7 @@
     }
   ],
   "topbarCtaButton": {
-    "name": "Start Free >",
+    "name": "Start Free",
     "url": "https://gopasswordless.dev/auth/signup"
   },
   "feedback": {
