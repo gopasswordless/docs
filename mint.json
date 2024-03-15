@@ -47,8 +47,8 @@
       "pages": ["welcome", "quickstart", "examples"]
     },
     {
-      "group": "Using the SDK",
-      "pages": ["installation", "signup", "signin", "validation"]
+      "group": "Signup & Login",
+      "pages": ["installation", "signup", "signin", "verification"]
     }
   ],
   "footerSocials": {

@@ -1,0 +1,46 @@
+---
+title: "Server-side verification"
+description: "Learn how to verify a user's access token server-side"
+---
+
+When a user logs in, you, the developer, get a JSON Web Token (JWT) that can be used to verify claims about the user and to provide access to
+protected data.
+
+Upon authentication, we generate a JWT signed with a private key. You can use the associated public key to ensure that the token
+is authentic and hasn't been tampered with in any way.
+
+There are a few ways you can do this:
+
+## Option 1: Use the GoPasswordless SDK
+
+The SDK provides a `validate` function that you can use to verify the signature of the access token and extract the claims.
+
+```typescript
+import { validate } from "@gopasswordless/sdk";
+
+...
+
+const claims = await validate("YOUR_APP_ID", "USER_ACCESS_TOKEN");
+```
+
+## Option 1: Using the JWKS API
+
+If your server-side code is not written in TypeScript or JavaScript, or you would like more control over the validation, you can also manually validate the token by fetching the JSON Web Key Set (JWKS) from the GoPasswordless API.
+
+The JWKS for your app can be found at `https://api.gopasswordless.dev/v1/auth/{YOUR_APP_ID}/.well-known/jwks.json`.
+
+### Example
+
+Using `jose` you could do something like this:
+
+```typescript
+import { createRemoteJWKSet, jwtVerify } from 'jose';
+
+...
+
+const JWKS = createRemoteJWKSet(
+  new URL(`${uri}/auth/${appId}/.well-known/jwks.json`)
+);
+
+const { payload: claims } = await jwtVerify<TokenClaims>(token, JWKS);
+```
