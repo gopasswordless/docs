@@ -29,7 +29,7 @@
   ],
   "topbarCtaButton": {
     "name": "Start Free",
-    "url": "https://gopasswordless.dev/auth/signup"
+    "url": "https://app.gopasswordless.dev/auth/signup"
   },
   "feedback": {
     "thumbsRating": true,
