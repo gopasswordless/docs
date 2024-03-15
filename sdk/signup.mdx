@@ -4,3 +4,52 @@ description: "Learn how to sign users up using the GoPasswordless SDK"
 ---
 
 ## Install the SDK
+
+```bash
+npm i @gopasswordless/sdk
+```
+
+## Sign up flow
+
+GoPasswordless provides a simple, two step signup flow to register a passkey for the user and verify the user's email address.
+
+### Step 1: Begin Registration
+
+The first step is to call the `beginRegistration` function. This function uses WebAuthn to set up a passkey on the user's device and then
+registeres that the public key with GoPasswordless. It the returns a token that you will need for the next step.
+
+<Note>
+  WebAuthn passkeys are scoped to a top level domain. GoPasswordless verifies
+  that the passkey being used for registration matches the domain linked to your
+  app and rejects the registration request if it doesn't.
+</Note>
+
+```typescript
+import { beginRegistration } from '@gopasswordless/sdk';
+
+...
+
+const signupToken = await beginRegistration(
+  'YOUR_APP_ID',
+  'USER_EMAIL_ADDRESS'
+);
+```
+
+### Step 2: Complete Registration
+
+If step 1 is successful, the user will receive a verification code via email. Provide an input to collect this code from the user somewhere
+and then call the `completeRegistration` function with this verification code and the token from step 1. If the verifcation code is correct
+and the signup token is valid, the response will contain an access token that you can use to authenticate the user in your app.
+
+```typescript
+import { completeRegistration } from '@gopasswordless/sdk';
+
+...
+
+const { accessToken } = await completeRegistration(
+  'YOUR_APP_ID',
+  'USER_EMAIL_ADDRESS',
+  'VERIFICATION_CODE'
+  'SIGNUP_TOKEN',
+);
+```
