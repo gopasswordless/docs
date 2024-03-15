@@ -1,0 +1,14 @@
+---
+title: "Logging users in"
+description: "Learn how to log users in using the GoPasswordless SDK"
+---
+
+You can log users in by calling the `login` function with your app ID and the user's email address. This function will
+trigger the browser to prompt the user to unlock their passkey and generate a signature. If the signature is valid, the
+response will contain an access token that you can use to authenticate the user in your app.
+
+```typescript
+import { login } from "@gopasswordless/sdk";
+
+const { accessToken } = await login("YOUR_APP_ID", "USER_EMAIL_ADDRESS");
+```

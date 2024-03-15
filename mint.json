@@ -48,7 +48,12 @@
     },
     {
       "group": "SDK",
-      "pages": ["sdk/signup", "sdk/signin", "sdk/validation"]
+      "pages": [
+        "sdk/installation",
+        "sdk/signup",
+        "sdk/signin",
+        "sdk/validation"
+      ]
     }
   ],
   "footerSocials": {
