@@ -23,7 +23,7 @@ import { validate } from "@gopasswordless/sdk";
 const claims = await validate("YOUR_APP_ID", "USER_ACCESS_TOKEN");
 ```
 
-## Option 1: Using the JWKS API
+## Option 2: Using the JWKS API
 
 If your server-side code is not written in TypeScript or JavaScript, or you would like more control over the validation, you can also manually validate the token by fetching the JSON Web Key Set (JWKS) from the GoPasswordless API.
 
