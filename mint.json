@@ -35,12 +35,6 @@
     "thumbsRating": true,
     "suggestEdit": true
   },
-  "tabs": [
-    {
-      "name": "SDK Reference",
-      "url": "sdk"
-    }
-  ],
   "navigation": [
     {
       "group": "Introduction",
